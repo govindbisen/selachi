@@ -3,7 +3,7 @@ window.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY || document.documentElement.scrollTop;
   const viewportHeight = window.innerHeight;
 
-  if (scrollPosition > viewportHeight * 0.3) {
+  if (scrollPosition > viewportHeight * 0.4) {
     header.classList.remove('transparent');
   } else {
     header.classList.add('transparent');
