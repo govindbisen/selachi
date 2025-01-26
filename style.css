@@ -42,6 +42,7 @@ html {
   animation: spin 1s linear infinite;
 }
 
+
 /* Spinning animation */
 @keyframes spin {
   to {
