@@ -21,13 +21,15 @@ body {
   margin: 0;
 }
 
-header,
+/* header,
 section {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
+} */
+
+
 
 .navbar {
   background: var(--navbar-bg);
@@ -74,6 +76,18 @@ section {
 .nav-links a:hover {
   color: #f07575;
 }
+
+
+
+header,
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
 
 .header {
   height: 100vh;
@@ -135,12 +149,7 @@ section {
 
 
 
-.home-svg {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.home-svg {}
 
 
 .sub-tag-line {
