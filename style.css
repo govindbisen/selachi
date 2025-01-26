@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 :root {
-  --navbar-bg: rgba(4, 9, 73, 0.8);
+  --navbar-bg: rgba(6, 55, 95, 0.8);
   --navbar-color: #000;
 }
 
@@ -15,6 +15,48 @@ html {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+
+/* Loader styles */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2F4F4F;
+  /* Background color for loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loader::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinning animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Content styles */
+#content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+
 
 body {
   scroll-behavior: smooth;
@@ -56,8 +98,10 @@ section {
   z-index: 1000;
 }
 
+
 .navbar .brand h1 {
   margin: 0;
+  text-shadow: 2px 2px #0d0247;
 }
 
 .nav-links {
@@ -74,7 +118,8 @@ section {
 }
 
 .nav-links a:hover {
-  color: #f07575;
+  color: #f09999;
+  text-shadow: 2px #0d0247;
 }
 
 
@@ -87,14 +132,64 @@ section {
   text-align: center;
 }
 
+/* 
+To blur only the background image without affecting the text or other content layered on top, you can use a combination of CSS pseudo-elements and positioning. The filter: blur() property can be applied specifically to the background image using a pseudo-element like ::before.
 
+.header Styles:
+
+    Acts as the container for your content.
+    Sets the height to 100vh to ensure it spans the full viewport height.
+    Text and content inside .header are unaffected by the blur.
+
+.header::before Pseudo-Element:
+
+    content: '': Creates an empty pseudo-element.
+    Positioning: absolute positions it inside .header and spans the full width and height.
+    Background: Applies the image as the background for the pseudo-element.
+    Filter: blur(10px) is applied only to the pseudo-element, keeping the actual content unaffected.
+    z-index: -1: Places the blurred pseudo-element behind the text and other elements.
+
+overflow: hidden:
+
+    Ensures any overflow from the blurred background is hidden within the .header container.
+*/
 
 .header {
+  position: relative;
   height: 100vh;
-  background: url('/public/f2.jpg') no-repeat center center/cover;
   color: #fff;
   padding-top: 60px;
   /* Account for fixed header height */
+  overflow: hidden;
+  /* Ensure the blurred background doesn't overflow */
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/public/f2.jpg') no-repeat center center/cover;
+  filter: blur(4px);
+  /* Apply blur only to the background */
+  z-index: -1;
+  /* Place the background behind the content */
+}
+
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(238, 215, 87, 0.3);
+  /* Blue overlay with transparency */
+  z-index: -1;
+  /* Layer above the image but below the text */
 }
 
 .section {
@@ -147,9 +242,22 @@ section {
   /* Adjust width as needed */
 }
 
+.content-home {
+  z-index: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  align-content: start;
+
+}
+
+.content-home>div {
+  flex: 1
+}
 
 
-.home-svg {}
+
 
 
 .sub-tag-line {
