@@ -90,6 +90,8 @@ section {
   /* Account for fixed header height */
 }
 
+
+
 .section:nth-child(even) {
   background: #e9e1e1;
 }
@@ -103,6 +105,8 @@ section {
   font-size: 1rem;
   margin-bottom: 30px;
 }
+
+
 
 .content .cta {
   text-decoration: none;
@@ -129,6 +133,8 @@ section {
   /* Adjust width as needed */
 }
 
+
+
 .home-svg {
   flex: 1;
   display: flex;
@@ -136,11 +142,158 @@ section {
   align-items: center;
 }
 
-.home-text {
-  flex: 1;
-  padding: 20px;
-  color: #fff;
-  /* or any other color you prefer */
-  text-align: left;
-  /* or justify if you prefer justified text */
+
+.sub-tag-line {
+  font-size: smaller;
+  font-weight: bold;
+  word-spacing: 4px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #D3D3D3;
+}
+
+.footer {
+
+  height: 40vh;
+
+  /* background-color: #1A3C58; */
+  background-color: #2F4F4F;
+
+  /* background-color: #101820 */
+}
+
+.footer-pointers {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.footer-pointers-2 {
+  margin-top: 20px;
+  display: flex;
+  gap: 5px;
+  /* Ensures only 5px spacing between the items */
+  align-items: center;
+  justify-content: center;
+
+}
+
+.footer-pointers-2 p {
+  margin: 0;
+  /* Removes default margin from the <p> tags */
+  padding: 0;
+  /* Removes any default padding from the <p> tags */
+}
+
+.fa-location-crosshairs {
+  font-size: 24px;
+
+  color: rgb(165, 8, 8);
+}
+
+.fa-envelope {
+  font-size: 24px;
+
+  color: #0d6efd;
+}
+
+.email-link {
+  display: flex;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  color: #0d6efd;
+  /* Darker blue on hover */
+}
+
+
+.fa-phone {
+  font-size: 24px;
+  color: #4CAF50;
+  /* Green color for the phone icon */
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.fa-phone:hover {
+  color: #388E3C;
+  /* Darker green on hover */
+}
+
+/* i {
+  font-size: 16px;
+  color: #02131f;
+  margin-right: 10px;
+} */
+
+.fa-globe {
+  font-size: 16px;
+  color: #b3d2eb;
+  margin-right: 10px;
+}
+
+.fa-x-twitter {
+  font-size: 16px;
+  color: rgb(229, 236, 226);
+  margin-right: 10px;
+}
+
+.fa-instagram {
+  font-size: 16px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  margin-right: 10px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.copyright {
+  color: #D3D3D3;
+  /* Light gray for copyright */
+  font-size: xx-small;
+}
+
+.fa-arrow-up {
+  font-size: 16px;
+  /* Base size of the icon */
+  color: #4CAF50;
+  text-decoration: none;
+  margin-right: 10px;
+  display: inline-block;
+  /* Prevent inline layout issues */
+  transition: transform 0.2s ease, color 0.2s ease;
+
+}
+
+.fa-arrow-up:hover {
+  transform: scale(1.2);
+  /* Scale the icon by 20% */
+  color: #388E3C;
+  /* Change color on hover */
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 50px;
+  /* 50px from the bottom */
+  right: 50px;
+  /* 50px from the right */
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  /* Optional shadow */
+  transition: background-color 0.3s ease;
+}
+
+.fixed-button:hover {
+  background-color: #0056b3;
+  /* Darker shade on hover */
 }
