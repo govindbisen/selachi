@@ -20,6 +20,6 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     loader.style.display = 'none'; // Hide the loader
     content.style.display = 'block'; // Show the content
-  }, 2000); // 2 seconds (adjust as needed)
+  }, 1000); // 2 seconds (adjust as needed)
 });
 
