@@ -296,6 +296,82 @@ overflow: hidden:
 
 
 
+/* about */
+.about {
+  height: 40em;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.abount_container_div {
+  width: 15em;
+  height: 11em;
+
+  border-radius: 10px;
+  border-left: 25px solid rgb(8, 8, 109);
+  margin: 3em;
+  text-align: left;
+  padding-left: 5px;
+  transition: 1s;
+}
+
+.abount_container_div>h4 {
+  margin-bottom: 2em;
+  color: #0d0247;
+  text-shadow: 2px 2px 5px rgb(182, 182, 240);
+  word-spacing: 4px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.abount_container_div:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgb(149, 149, 233);
+
+}
+
+/* about ends here */
+
+
+/* ourservices */
+.ourservices {
+  width: 80%;
+  margin: auto;
+  display: block;
+  box-shadow: 4px 4px 15px rgb(149, 149, 233);
+  border-radius: 10px;
+}
+
+
+.ourservices_content {
+  border-radius: 5px;
+  /* border: 1px solid rgb(204, 204, 241); */
+  margin-top: 4em;
+  margin-bottom: 10em;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.ourservices_content>p {
+  padding-left: 6em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  margin-top: 3em;
+
+}
+
+/* ourservices */
+
 
 .sub-tag-line {
   font-size: smaller;
