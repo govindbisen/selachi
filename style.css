@@ -175,7 +175,9 @@ overflow: hidden:
   background: url('/public/f2.jpg') no-repeat center center/cover;
   filter: blur(4px);
   /* Apply blur only to the background */
-  z-index: -1;
+  z-index: -2;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   /* Place the background behind the content */
 }
 
@@ -187,7 +189,7 @@ overflow: hidden:
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(83, 98, 114, 0.3);
+  background: linear-gradient(to bottom, rgba(188, 205, 223, 0.3), rgba(188, 205, 223, 0));
   /* Blue overlay with transparency */
   z-index: -1;
   /* Layer above the image but below the text */
@@ -229,9 +231,9 @@ overflow: hidden:
   font-size: 1.125rem;
   line-height: 1.6;
   margin: 0;
-  color: #fcfcfc;
+  color: #04555f;
   text-align: justify;
-  text-shadow: 1px 1px 1px rgba(1, 11, 100, 0.7);
+  text-shadow: 1px 1px 1px rgba(121, 129, 206, 0.7);
   /* Slightly lighter for contrast */
 }
 
@@ -366,8 +368,26 @@ overflow: hidden:
   padding-left: 6em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: small;
-  margin-top: 3em;
 
+
+
+}
+
+.ourservices_content p:nth-child(2),
+.ourservices_content p:nth-child(3),
+.ourservices_content p:nth-child(4) {
+  margin-top: 0;
+  /* Remove top margin */
+  margin-bottom: 0;
+  /* Optional: Remove bottom margin to keep them close */
+}
+
+.ourservices_content p:first-child,
+.ourservices_content p:last-child {
+  margin-top: 3em;
+  /* Adjust as needed */
+  margin-bottom: 3em;
+  /* Adjust as needed */
 }
 
 /* ourservices */
