@@ -312,6 +312,7 @@ overflow: hidden:
 }
 
 .abount_container_div {
+  background-color: rgb(247, 247, 247);
   width: 15em;
   height: 11em;
 
@@ -365,12 +366,10 @@ overflow: hidden:
 }
 
 .ourservices_content>p {
+  color: #0d0247;
   padding-left: 6em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: small;
-
-
-
+  font-size: medium,
 }
 
 .ourservices_content p:nth-child(2),
