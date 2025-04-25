@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+:root {
+  --navbar-bg: rgba(6, 55, 95, 0.8);
+  --navbar-color: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* Loader styles */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2F4F4F;
+  /* Background color for loader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loader::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+
+/* Spinning animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Content styles */
+#content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+
+
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+/* header,
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} */
+
+
+
+.navbar {
+  background: var(--navbar-bg);
+  color: var(--navbar-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar.transparent {
+  --navbar-bg: rgba(39, 16, 0, 0.1);
+  --navbar-color: #fff;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 60px;
+  color: #fff;
+  transition: background 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+}
+
+
+.navbar .brand h1 {
+  margin: 0;
+  text-shadow: 2px 2px #0d0247;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 50px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f09999;
+  text-shadow: 2px #0d0247;
+}
+
+
+
+header,
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 
+To blur only the background image without affecting the text or other content layered on top, you can use a combination of CSS pseudo-elements and positioning. The filter: blur() property can be applied specifically to the background image using a pseudo-element like ::before.
+
+.header Styles:
+
+    Acts as the container for your content.
+    Sets the height to 100vh to ensure it spans the full viewport height.
+    Text and content inside .header are unaffected by the blur.
+
+.header::before Pseudo-Element:
+
+    content: '': Creates an empty pseudo-element.
+    Positioning: absolute positions it inside .header and spans the full width and height.
+    Background: Applies the image as the background for the pseudo-element.
+    Filter: blur(10px) is applied only to the pseudo-element, keeping the actual content unaffected.
+    z-index: -1: Places the blurred pseudo-element behind the text and other elements.
+
+overflow: hidden:
+
+    Ensures any overflow from the blurred background is hidden within the .header container.
+*/
+
+.header {
+  position: relative;
+  height: 100vh;
+  color: #fff;
+  padding-top: 60px;
+  /* Account for fixed header height */
+  overflow: hidden;
+  /* Ensure the blurred background doesn't overflow */
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/public/f2.jpg') no-repeat center center/cover;
+  filter: blur(4px);
+  /* Apply blur only to the background */
+  z-index: -2;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  /* Place the background behind the content */
+}
+
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(188, 205, 223, 0.3), rgba(188, 205, 223, 0));
+  /* Blue overlay with transparency */
+  z-index: -1;
+  /* Layer above the image but below the text */
+}
+
+.section {
+  height: 200vh;
+  background: #cdc8c8;
+  padding-top: 60px;
+  /* Account for fixed header height */
+}
+
+.hero-section {
+  /* background: rgba(173, 216, 230, 0.2); */
+  /* Very light blue with slight transparency */
+  padding: 40px 20px;
+  /* border-left: 5px solid #0056b3; */
+  /* Subtle left border in blue */
+  color: #333;
+  /* Dark gray text for readability */
+  font-family: Arial, sans-serif;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  /* Soft shadow for depth */
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: 80px;
+  color: #0b148b;
+  /* Rich blue for the heading */
+  text-shadow: 1px 1px 2px rgba(22, 5, 5, 0.7);
+
+  /* Subtle glow effect */
+}
+
+.hero-section p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #04555f;
+  text-align: justify;
+  text-shadow: 1px 1px 1px rgba(121, 129, 206, 0.7);
+  /* Slightly lighter for contrast */
+}
+
+
+
+
+.section:nth-child(even) {
+  background: #e9e1e1;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+
+
+.content .cta {
+  text-decoration: none;
+  padding: 10px 30px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.cta:hover {
+  background: #b7dabf;
+  color: #28a745;
+}
+
+.home-container {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  /* Adjust width as needed */
+}
+
+.content-home {
+  z-index: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  align-content: start;
+
+}
+
+.content-home>div {
+  flex: 1
+}
+
+
+
+
+/* about */
+.about {
+  height: 40em;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.abount_container_div {
+  background-color: rgb(247, 247, 247);
+  width: 15em;
+  height: 11em;
+
+  border-radius: 10px;
+  border-left: 25px solid rgb(8, 8, 109);
+  margin: 3em;
+  text-align: left;
+  padding-left: 5px;
+  transition: 1s;
+}
+
+.abount_container_div>h4 {
+  margin-bottom: 2em;
+  color: #0d0247;
+  text-shadow: 2px 2px 5px rgb(182, 182, 240);
+  word-spacing: 4px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.abount_container_div:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgb(149, 149, 233);
+
+}
+
+/* about ends here */
+
+
+/* ourservices */
+.ourservices {
+  width: 80%;
+  margin: auto;
+  display: block;
+  box-shadow: 4px 4px 15px rgb(149, 149, 233);
+  border-radius: 10px;
+}
+
+
+.ourservices_content {
+  border-radius: 5px;
+  /* border: 1px solid rgb(204, 204, 241); */
+  margin-top: 4em;
+  margin-bottom: 10em;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.ourservices_content>p {
+  color: #0d0247;
+  padding-left: 6em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium,
+}
+
+.ourservices_content p:nth-child(2),
+.ourservices_content p:nth-child(3),
+.ourservices_content p:nth-child(4) {
+  margin-top: 0;
+  /* Remove top margin */
+  margin-bottom: 0;
+  /* Optional: Remove bottom margin to keep them close */
+}
+
+.ourservices_content p:first-child,
+.ourservices_content p:last-child {
+  margin-top: 3em;
+  /* Adjust as needed */
+  margin-bottom: 3em;
+  /* Adjust as needed */
+}
+
+/* ourservices */
+
+
+.sub-tag-line {
+  font-size: smaller;
+  font-weight: bold;
+  word-spacing: 4px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #D3D3D3;
+}
+
+.footer {
+
+  height: 40vh;
+
+  /* background-color: #1A3C58; */
+  background-color: #2F4F4F;
+
+  /* background-color: #101820 */
+}
+
+.footer-pointers {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.footer-pointers-2 {
+  margin-top: 20px;
+  display: flex;
+  gap: 5px;
+  /* Ensures only 5px spacing between the items */
+  align-items: center;
+  justify-content: center;
+
+}
+
+.footer-pointers-2 p {
+  margin: 0;
+  /* Removes default margin from the <p> tags */
+  padding: 0;
+  /* Removes any default padding from the <p> tags */
+}
+
+.fa-location-crosshairs {
+  font-size: 24px;
+
+  color: rgb(165, 8, 8);
+}
+
+.fa-envelope {
+  font-size: 24px;
+
+  color: #0d6efd;
+}
+
+.email-link {
+  display: flex;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  color: #0d6efd;
+  /* Darker blue on hover */
+}
+
+
+.fa-phone {
+  font-size: 24px;
+  color: #4CAF50;
+  /* Green color for the phone icon */
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.fa-phone:hover {
+  color: #388E3C;
+  /* Darker green on hover */
+}
+
+/* i {
+  font-size: 16px;
+  color: #02131f;
+  margin-right: 10px;
+} */
+
+.fa-globe {
+  font-size: 16px;
+  color: #b3d2eb;
+  margin-right: 10px;
+}
+
+.fa-x-twitter {
+  font-size: 16px;
+  color: rgb(229, 236, 226);
+  margin-right: 10px;
+}
+
+.fa-instagram {
+  font-size: 16px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  margin-right: 10px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.copyright {
+  color: #D3D3D3;
+  /* Light gray for copyright */
+  font-size: xx-small;
+}
+
+.fa-arrow-up {
+  font-size: 16px;
+  /* Base size of the icon */
+  color: #4CAF50;
+  text-decoration: none;
+  margin-right: 10px;
+  display: inline-block;
+  /* Prevent inline layout issues */
+  transition: transform 0.2s ease, color 0.2s ease;
+
+}
+
+.fa-arrow-up:hover {
+  transform: scale(1.2);
+  /* Scale the icon by 20% */
+  color: #388E3C;
+  /* Change color on hover */
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 50px;
+  /* 50px from the bottom */
+  right: 50px;
+  /* 50px from the right */
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  /* Optional shadow */
+  transition: background-color 0.3s ease;
+}
+
+.fixed-button:hover {
+  background-color: #0056b3;
+  /* Darker shade on hover */
+}
