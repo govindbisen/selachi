@@ -1,3 +1,45 @@
+// Contact form — sends to Formspree
+// Steps to activate:
+// 1. Go to https://formspree.io and sign up free
+// 2. Create a new form, set email to chandrakantb@selachii-infotech.com
+// 3. Copy your form ID (looks like: xpwzgkla)
+// 4. Replace YOUR_FORM_ID below with that ID
+const FORMSPREE_ID = 'xrerbnbg';
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const submitBtn = form.querySelector('.form-submit');
+  const success = document.getElementById('formSuccess');
+  const error = document.getElementById('formError');
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
+  success.style.display = 'none';
+  error.style.display = 'none';
+
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+
+    if (res.ok) {
+      success.style.display = 'block';
+      form.reset();
+      setTimeout(() => { success.style.display = 'none'; }, 5000);
+    } else {
+      error.style.display = 'block';
+    }
+  } catch {
+    error.style.display = 'block';
+  }
+
+  submitBtn.disabled = false;
+  submitBtn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane"></i>';
+});
+
 // Hamburger menu
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
