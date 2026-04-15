@@ -1,3 +1,19 @@
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+});
+
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+  });
+});
+
 window.addEventListener('scroll', () => {
   const header = document.getElementById('navbar');
   const scrollPosition = window.scrollY || document.documentElement.scrollTop;
@@ -56,30 +72,35 @@ window.addEventListener("scroll", () => {
 
 
 
-const carousel = document.querySelector('.team-carousel');
+// Team Carousel
+const carousel = document.getElementById('teamCarousel');
 const dotsContainer = document.getElementById('carouselDots');
-const cards = document.querySelectorAll('.team-card');
+const prevBtn = document.getElementById('teamPrev');
+const nextBtn = document.getElementById('teamNext');
+const cards = carousel.querySelectorAll('.team-card');
+const total = cards.length;
+let current = 0;
 
-cards.forEach((_, index) => {
+cards.forEach((_, i) => {
   const dot = document.createElement('div');
   dot.classList.add('dot');
-  if (index === 0) dot.classList.add('active');
-  dot.addEventListener('click', () => {
-    carousel.scrollTo({
-      left: cards[index].offsetLeft - 16,
-      behavior: 'smooth'
-    });
-  });
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goTo(i));
   dotsContainer.appendChild(dot);
 });
 
-carousel.addEventListener('scroll', () => {
-  const scrollLeft = carousel.scrollLeft + 100;
-  const cardWidth = cards[0].offsetWidth + 32;
-  const activeIndex = Math.round(scrollLeft / cardWidth);
+function goTo(index) {
+  current = (index + total) % total;
+  carousel.scrollTo({ left: cards[current].offsetLeft - 48, behavior: 'smooth' });
+  document.querySelectorAll('#carouselDots .dot').forEach((d, i) => d.classList.toggle('active', i === current));
+}
 
-  document.querySelectorAll('.dot').forEach((d, i) => {
-    d.classList.toggle('active', i === activeIndex);
-  });
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+
+carousel.addEventListener('scroll', () => {
+  const cardWidth = cards[0].offsetWidth + 32;
+  current = Math.round(carousel.scrollLeft / cardWidth);
+  document.querySelectorAll('#carouselDots .dot').forEach((d, i) => d.classList.toggle('active', i === current));
 });
 

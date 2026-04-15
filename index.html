@@ -21,9 +21,21 @@
       <a href="#section1">Home</a>
       <a href="#section2">About</a>
       <a href="#section3">Services</a>
+      <a href="#projects">Projects</a>
       <a href="#section4">Contact</a>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#section1">Home</a>
+    <a href="#section2">About</a>
+    <a href="#section3">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#section4">Contact</a>
+  </nav>
 
 
   <section id="section1" class="home">
@@ -259,61 +271,179 @@
 
 
   <section id="team">
-    <h2>Meet Our Team</h2>
+    <div class="team-section-header">
+      <h2>Meet Our Team</h2>
+      <p>The experts behind Selachii Infotech</p>
+    </div>
 
-    <div class="team-carousel">
-      <div class="team-card">
-        <img
-          src="https://media.istockphoto.com/id/1131164548/vector/avatar-5.jpg?s=612x612&w=0&k=20&c=CK49ShLJwDxE4kiroCR42kimTuuhvuo2FH5y_6aSgEo="
-          alt="Chandrakant Profile Picture" class="profile-pic" />
-        <h3>Chandrakant</h3>
-        <h6>Director of Accounts & Finance</h6>
-        <p>A highly experienced financial expert with 12+ years in accounting, asset management, and financial analysis.
-        </p>
-      </div>
+    <div class="team-carousel-wrapper">
+      <div class="team-carousel" id="teamCarousel">
 
-      <div class="team-card">
-        <img
-          src="https://media.istockphoto.com/id/1131164548/vector/avatar-5.jpg?s=612x612&w=0&k=20&c=CK49ShLJwDxE4kiroCR42kimTuuhvuo2FH5y_6aSgEo="
-          alt="Hari Priya Profile Picture" class="profile-pic" />
-        <h3>Hari Priya</h3>
-        <h6>Sr. Manager of Accounts & Finance</h6>
-        <p>Strategic leader with deep accounting expertise and a strong financial mindset driving key decisions.</p>
-      </div>
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-card-avatar">
+              <img src="public/favicon.jpeg" alt="Chandrakant" class="profile-pic" />
+            </div>
+            <h3>Chandrakant</h3>
+            <span class="team-role">Director of Accounts &amp; Finance</span>
+            <p>A highly experienced financial expert with 12+ years in accounting, asset management, and financial analysis.</p>
+            <div class="team-tags"><span>Accounting</span><span>Asset Mgmt</span><span>Compliance</span></div>
+          </div>
+        </div>
 
-      <div class="team-card">
-        <img
-          src="https://media.istockphoto.com/id/1131164548/vector/avatar-5.jpg?s=612x612&w=0&k=20&c=CK49ShLJwDxE4kiroCR42kimTuuhvuo2FH5y_6aSgEo="
-          alt="QuickBooks ProAdvisors Profile Picture" class="profile-pic" />
-        <h3>QuickBooks ProAdvisors & Bookkeepers</h3>
-        <p>Intuit-certified experts in QBO, QBD, tax compliance, automation, and AI-driven bookkeeping.</p>
-      </div>
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-card-avatar">
+              <img src="public/favicon.jpeg" alt="Hari Priya" class="profile-pic" />
+            </div>
+            <h3>Hari Priya</h3>
+            <span class="team-role">Sr. Manager of Accounts &amp; Finance</span>
+            <p>Strategic leader with deep accounting expertise and a strong financial mindset driving key decisions.</p>
+            <div class="team-tags"><span>Reporting</span><span>Leadership</span><span>Strategy</span></div>
+          </div>
+        </div>
 
-      <div class="team-card">
-        <img
-          src="https://media.istockphoto.com/id/1131164548/vector/avatar-5.jpg?s=612x612&w=0&k=20&c=CK49ShLJwDxE4kiroCR42kimTuuhvuo2FH5y_6aSgEo="
-          alt="Industry Experts Profile Picture" class="profile-pic" />
-        <h3>Industry-Specific Experts</h3>
-        <p>Solutions tailored for Startups, Retail, Healthcare, Real Estate, Nonprofits, and more.</p>
-      </div>
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-card-avatar">
+              <img src="public/favicon.jpeg" alt="QuickBooks ProAdvisors" class="profile-pic" />
+            </div>
+            <h3>QuickBooks ProAdvisors</h3>
+            <span class="team-role">Bookkeeping Specialists</span>
+            <p>Intuit-certified experts in QBO, QBD, tax compliance, automation, and AI-driven bookkeeping.</p>
+            <div class="team-tags"><span>QuickBooks</span><span>QBO</span><span>Tax</span></div>
+          </div>
+        </div>
 
-      <div class="team-card">
-        <img
-          src="https://media.istockphoto.com/id/1131164548/vector/avatar-5.jpg?s=612x612&w=0&k=20&c=CK49ShLJwDxE4kiroCR42kimTuuhvuo2FH5y_6aSgEo="
-          alt="Professional Accountants Profile Picture" class="profile-pic" />
-        <h3>Professional Accountants, CPAs & CAs</h3>
-        <p>Our team includes CPAs, CAs, and CMAs with deep expertise in U.S. GAAP, IFRS, IRS, and multi-industry
-          finance.</p>
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-card-avatar">
+              <img src="public/favicon.jpeg" alt="Industry Experts" class="profile-pic" />
+            </div>
+            <h3>Industry-Specific Experts</h3>
+            <span class="team-role">Domain Specialists</span>
+            <p>Solutions tailored for Startups, Retail, Healthcare, Real Estate, Nonprofits, and more.</p>
+            <div class="team-tags"><span>Healthcare</span><span>Real Estate</span><span>Nonprofits</span></div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-inner">
+            <div class="team-card-avatar">
+              <img src="public/favicon.jpeg" alt="Professional Accountants" class="profile-pic" />
+            </div>
+            <h3>Professional Accountants</h3>
+            <span class="team-role">CPAs, CAs &amp; CMAs</span>
+            <p>Deep expertise in U.S. GAAP, IFRS, IRS, and multi-industry finance. Trusted advisors for all business sizes.</p>
+            <div class="team-tags"><span>CPA</span><span>GAAP</span><span>IFRS</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="carousel-dots" id="carouselDots"></div>
-
+    <div class="team-nav">
+      <button class="team-nav-btn" id="teamPrev"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="team-nav-btn" id="teamNext"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
   </section>
 
 
 
 
+
+  <section id="projects" class="projects-section">
+    <div class="projects-header">
+      <h2>Projects We Build</h2>
+      <p>End-to-end delivery across web, cloud, AI, and quality engineering</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>MERN Stack Applications</h3>
+        <p>Full-stack web apps built with MongoDB, Express, React & Node.js — from MVPs to enterprise-grade platforms with REST APIs and real-time features.</p>
+        <div class="project-tags">
+          <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>Express</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon"><i class="fa-brands fa-aws"></i></div>
+        <h3>AWS Cloud Deployments</h3>
+        <p>Scalable cloud infrastructure on AWS EC2, S3, Lambda, RDS & CloudFront — including CI/CD pipelines, auto-scaling, and cost-optimized architectures.</p>
+        <div class="project-tags">
+          <span>EC2</span><span>S3</span><span>Lambda</span><span>RDS</span><span>CloudFront</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+        <h3>QA & Test Automation</h3>
+        <p>Manual and automated testing across web, API, and mobile — using Selenium, Cypress, Postman & Jest to ensure zero-defect releases.</p>
+        <div class="project-tags">
+          <span>Selenium</span><span>Cypress</span><span>Postman</span><span>Jest</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>AI & Agentic Automation</h3>
+        <p>Intelligent agents, RAG pipelines, and LLM-powered workflows using LangChain, OpenAI & CrewAI — automating complex business processes end-to-end.</p>
+        <div class="project-tags">
+          <span>LangChain</span><span>OpenAI</span><span>CrewAI</span><span>RAG</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Data Science & Analytics</h3>
+        <p>Dashboards, predictive models, and data pipelines using Python, Power BI & Tableau — turning raw data into actionable business insights.</p>
+        <div class="project-tags">
+          <span>Python</span><span>Power BI</span><span>Tableau</span><span>Pandas</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon"><i class="fa-solid fa-gears"></i></div>
+        <h3>DevOps & CI/CD Pipelines</h3>
+        <p>Containerised deployments with Docker & Kubernetes, automated pipelines via GitHub Actions, and infrastructure-as-code using Terraform.</p>
+        <div class="project-tags">
+          <span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+        <h3>API & Microservices</h3>
+        <p>Robust REST & GraphQL APIs, microservice architectures, and third-party integrations — built for performance, security, and scalability.</p>
+        <div class="project-tags">
+          <span>REST API</span><span>GraphQL</span><span>Microservices</span><span>JWT</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon"><i class="fa-solid fa-database"></i></div>
+        <h3>Database Design & Optimization</h3>
+        <p>Schema design, query optimization, and managed databases across PostgreSQL, MySQL, MongoDB, Redis & vector databases for AI workloads.</p>
+        <div class="project-tags">
+          <span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>Pinecone</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Security & Compliance Projects</h3>
+        <p>Security audits, penetration testing readiness, MFA implementation, and compliance setups for SOC2, GDPR, and RBI standards.</p>
+        <div class="project-tags">
+          <span>SOC2</span><span>GDPR</span><span>MFA</span><span>Audit</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <section id="section4" class="footer">
     <footer>
